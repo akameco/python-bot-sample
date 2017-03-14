@@ -9,7 +9,7 @@ def cmd(arg=None):
             func._command = arg
         return func
 
-    if not inspect.isfunction(arg):
-        return wrap
-    else:
+    if inspect.isfunction(arg):
         return wrap(arg)
+    else:
+        return wrap
